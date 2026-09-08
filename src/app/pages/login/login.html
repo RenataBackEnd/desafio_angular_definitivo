@@ -1,0 +1,41 @@
+<main class="login-container">
+        
+    <section class="login-image-area">
+        <img src="img/ranger.png" alt="Picape Ford Ranger" class="car-image">
+    </section>
+
+    <section class="login-form-area">
+        
+        <!-- Importante: No Angular, quando usamos [(ngModel)] dentro de uma tag <form>, precisamos dar um "name" para o input -->
+        <form>
+
+            <!-- O caminho da logo -->
+            <img src="img/ford.png" alt="Logo da Ford" class="logo">
+            
+            <h1>Boas-vindas</h1>
+                
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <!-- Colocando o [(ngModel)] e o name="usuario" dentro da tag input -->
+                    <input type="text" id="username" placeholder="Digite seu usuário" [(ngModel)]="usuario" name="usuario">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <!-- Colocando o [(ngModel)] e o name="senha" dentro da tag input -->
+                    <input type="password" id="password" placeholder="Digite sua senha" [(ngModel)]="senha" name="senha">
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Logar automaticamente</label>
+                </div>
+
+                <!-- Evento (click) -->
+                <button type="button" (click)="fazerLogin()">Entrar</button>
+                
+        </form>
+
+    </section>
+
+</main>

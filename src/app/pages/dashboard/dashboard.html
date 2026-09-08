@@ -1,0 +1,78 @@
+<header class="header-dashboard">
+    <app-menu></app-menu>
+    <h1 class="titulo-dashboard">Dashboard FORD</h1>
+    <div class="espaco-vazio"></div> 
+</header>
+
+<main class="dashboard-conteudo">
+    <section class="cards-area">
+        <div class="card">
+            <h3>Veículo</h3>
+            <!-- O (change) avisa qundo muda de carro-->
+            <select class="select-veiculo" (change)="trocarCarro($event)">
+                <option value="mustang">Mustang</option>
+                <option value="ranger">Ranger</option>
+                <option value="territory">Territory</option>
+                <option value="bronco">Bronco Sport</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <h3>Total de Vendas</h3>
+            <p class="numero-azul">{{ totalVendas }}</p>
+            <span class="unidade">unid.</span>
+        </div>
+
+        <div class="card">
+            <h3>Conectados</h3>
+            <p class="numero-azul">{{ conectados }}</p>
+            <span class="unidade">unid.</span>
+        </div>
+
+        <div class="card">
+            <h3>Update Software</h3>
+            <p class="numero-azul">{{ atualizarSoftware }}</p>
+            <span class="unidade">unid.</span>
+        </div>
+    </section>
+
+    <section class="carro-centro">
+        <!-- [src] dinâmico -->
+        <img [src]="imagemCarro" alt="Carro em destaque" class="imagem-destaque">
+    </section>
+
+    <!-- Adicionada a div com a classe para puxar o fundo azul e colar no chão -->
+    <div class="tabela-inferior">
+        <table class="tabela-dados-veiculo">
+            <thead>
+                <tr>
+                    <th>Código - Vin</th>
+                    <th>Odômetro</th>
+                    <th>Nível de Combustível</th>
+                    <th>Status</th>
+                    <th>Lat.</th>
+                    <th>Long.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <!-- Inteligência do RxJS -->
+                        <input type="text" class="input-codigo" placeholder="Digite o VIN..." [(ngModel)]="vinBusca" (ngModelChange)="aoDigitar($event)" (keyup.enter)="buscarDadosVin()">
+                    </td>
+                    <!-- Variáveis dinâmicas no lugar dos dados fixos -->
+                    <td>{{ odometro }}</td>
+                    <td>{{ nivelCombustivel }}</td>
+                    <td>{{ status }}</td>
+                    <td>{{ lat }}</td>
+                    <td>{{ long }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+    <footer class="novo-rodape">
+        <p>Challenge Ford - Desenvolvido por Renata</p>
+    </footer>    
+</main>

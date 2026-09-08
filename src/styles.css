@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Força o navegador inteiro a ter 100% da altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Força a tag raiz do Angular a esticar até o fundo */
+app-root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}/* You can add global styles to this file, and also import other style files */

@@ -1,0 +1,15 @@
+<!-- Ícone para abrir o menu (Esquerda) -->
+<span (click)="mostrar()" class="menu-abrir material-symbols-outlined"> menu </span>
+
+<!-- Botão de Sair no lado oposto (Direita) -->
+<a routerLink="/login" class="btn-sair">Sair</a>
+
+<!-- A Gaveta Lateral -->
+<nav *ngIf="mostrarElemento" class="menu-lateral">
+    <div class="menu-logo">
+        <img src="img/ford.png" alt="Logo Ford">
+    </div>
+    
+    <a routerLink="/home">Home</a>
+    <a routerLink="/dashboard">Dashboard</a>
+</nav>

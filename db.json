@@ -1,0 +1,13 @@
+{
+  "veiculo": [
+    {
+      "id": "1",
+      "vin": "2FRHDUYS2Y63NHD22454",
+      "odometro": "9000 Km",
+      "nivelCombustivel": "98 %",
+      "status": "on",
+      "lat": "-12.2922",
+      "long": "-38.2914"
+    }
+  ]
+}

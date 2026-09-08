@@ -1,0 +1,110 @@
+/* Limpando as margens padrão do navegador para termos controle total */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Fonte temporária */
+}
+
+.login-container {
+    display: flex; /* Ativa o Flexbox: coloca os filhos lado a lado */
+    height: 100vh; /* Ocupa 100% da altura da tela (View Height) */
+}
+
+/* LADO ESQUERDO: Espaço do Carro */
+.login-image-area {
+    width: 50%; /* Ocupa metade da tela */
+    background-color: #ffffff; /* Uma cor de fundo branco para o carro parecer suspenso */
+    display: flex;
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    align-items: center; /* Centraliza o texto verticalmente */
+}
+
+/* LADO DIREITO: Espaço do Formulário */
+.login-form-area {
+    width: 50%; /* Ocupa a outra metade da tela */
+    background-color:#f4f4f4; /* Fundo cinza */
+    display: flex;
+    flex-direction: column; /* Coloca os itens do formulário em coluna */
+    justify-content: center; /* Centraliza tudo verticalmente na tela */
+    padding: 50px; /* Bordas internas */
+}
+
+/* Apenas separando um pouco os campos do formulário para não ficarem grudados */
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* LIMITANDO A LARGURA DO FORMULÁRIO */
+form {
+    width: 100%;
+    max-width: 400px; /* Impede que o formulário estique demais em telas muito grandes */
+}
+
+/* ESTILIZANDO O TÍTULO */
+h1 {
+    color: #003478; /* Azul parecido com o da Ford */
+    margin-bottom: 20px; /* Dá um espaço para baixo */
+    font-size: 24px;
+}
+
+/* ESTILIZANDO AS LABELS (Os textos "Usuário" e "Senha") */
+.input-group label {
+    display: block; /* Faz a label ocupar a linha inteira, empurrando a caixa de texto para baixo */
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* ESTILIZANDO AS CAIXAS DE TEXTO (Inputs) */
+.input-group input {
+    width: 100%; /* Faz a caixa esticar até o limite do formulário */
+    padding: 12px; /* Afasta o texto que o usuário digita das bordas da caixa */
+    border: 1px solid #ccc; /* Cria uma bordinha cinza clara */
+    border-radius: 5px; /* Lixa as "quinas" da caixa, deixando arredondada */
+    outline: none; /* Remove aquela linha preta forte que o navegador coloca ao clicar */
+}
+
+/* CHECKBOX ("Logar automaticamente") */
+.checkbox-group {
+    display: flex; /* Coloca o quadradinho e o texto lado a lado */
+    align-items: center; /* Centraliza os dois na mesma linha imaginária */
+    margin-bottom: 20px;
+    gap: 8px; /* Dá um espacinho entre o quadradinho e o texto */
+}
+
+/* BOTÃO DE ENTRAR */
+button {
+    width: 100%; /* Faz o botão ficar da mesma largura das caixas de texto */
+    padding: 12px;
+    background-color: #003478; /* Azul Ford */
+    color: white; /* Texto do botão em branco */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Muda a setinha do mouse para uma "mãozinha" de clique */
+    transition: background-color 0.3s; /* Faz a mudança de cor ser suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse (hover) por cima do botão */
+button:hover {
+    background-color: #002250; /* Muda para um azul um pouco mais escuro */
+}
+
+/* AJUSTANDO A IMAGEM DO CARRO */
+.car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 'Contain' garante que a imagem inteira apareça, sem cortar nada */
+    opacity: 0.65; /* Opacidade */
+}
+
+/* AJUSTANDO A LOGO */
+.logo {
+    width: 150px; 
+    margin-bottom: 20px;
+    display: block; /* Para garantir que ela se comporte bem dentro do form */
+    margin-left: auto; /* Centraliza horizontalmente junto com margin-right */
+    margin-right: auto;
+}
