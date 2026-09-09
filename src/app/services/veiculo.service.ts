@@ -7,15 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class VeiculoService {
   
-  // Endereço servidor falso 
-  private apiUrl = 'http://localhost:3001/veiculo'; 
+  // Endereço NOVO da API
+  private apiUrl = 'http://localhost:3001/vehicleData'; 
 
-  // Injetando o HttpClient
   constructor(private http: HttpClient) { }
 
-  // Função GET para buscar os dados
+  // Mudando de GET para POST
   buscarPorVin(vin: string): Observable<any> {
-    const url = `${this.apiUrl}?vin=${vin}`;
-    return this.http.get<any>(url);
+    // O professor pediu POST e espera receber um objeto JSON com o formato { vin: "codigo..." }
+    return this.http.post<any>(this.apiUrl, { vin: vin });
   }
 }

@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Menu } from '../../componentes/menu/menu';
 import { VeiculoService } from '../../services/veiculo.service';
 
-// Importando os operadores RxJS exigidos no desafio
+// Importando os operadores RxJS
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
@@ -34,7 +34,7 @@ export class Dashboard implements OnInit {
 
   constructor(private veiculoService: VeiculoService) {}
 
-  // Configuração inicial dos filtros do RxJS exigidos pelo professor
+  // Configuração inicial dos filtros do RxJS
   ngOnInit() {
     this.buscaSubject.pipe(
       filter(texto => texto.trim().length > 0), 
@@ -45,7 +45,7 @@ export class Dashboard implements OnInit {
     });
   }
 
-  // ESSA É A FUNÇÃO QUE FALTAVA PARA O ERRO SUMIR:
+  // PARA O ERRO SUMIR:
   aoDigitar(termo: string) {
     this.buscaSubject.next(termo);
   }

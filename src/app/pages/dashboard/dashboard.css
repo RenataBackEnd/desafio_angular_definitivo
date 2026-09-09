@@ -150,7 +150,7 @@ html, body {
     background-color: #001f4d; /* Azul mais escuro para destacar a tabela */
     width: 100%;
     min-height: 80px; /* Aumenta a altura do rodapé */
-        /* Centraliza o parágrafo no meio do rodapé */
+    /* Centraliza o parágrafo no meio do rodapé */
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -160,4 +160,54 @@ html, body {
     color: white;
     font-size: 14px;
     margin: 0;
+}
+
+
+@media (max-width: 768px){
+    .cards-area {
+        grid-template-columns: 1fr;
+    }
+    }
+
+    .titulo-dashboard {
+        font-size: 1.5rem;
+        text-align: center;        
+    }
+
+    .tabela-inferior {
+        overflow-x: auto;
+        width: 100%;
+        display: block;
+    }
+
+    .tabela-dados-veiculo th,
+    .tabela-dados-veiculo dh {
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+    /* Mobile */
+@media (max-width: 450px) {
+  
+  /* Diminui ainda mais o título para não quebrar em duas linhas */
+  .titulo-dashboard {
+    font-size: 1.2rem;
+  }
+
+  /* Reduz as margens laterais da área dos cartões para aproveitar mais a tela */
+  .cards-area {
+    padding: 5px;
+    gap: 10px;
+  }
+
+  /* Garante que o campo de digitar o VIN ocupe o espaço correto e não fique cortado */
+  .input-codigo {
+    width: 100%;
+    min-width: 180px; /* Impede que o campo fique pequeno demais para clicar */
+  }
+
+  /* Reduz o tamanho da fonte da tabela para caber mais informação na tela do celular */
+  .tabela-dados-veiculo {
+    font-size: 0.9rem;
+  }
 }
