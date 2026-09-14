@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'; /* módulo de ferramentas */
-import { Router } from '@angular/router'; /* serviço interno, não vai no imports:[] */
+import { FormsModule } from '@angular/forms'; 
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,6 @@ import { Router } from '@angular/router'; /* serviço interno, não vai no impor
   styleUrl: './login.css',
 })
 export class Login {
-  /* Vai guardar o que digitar */
   usuario = '';
   senha = '';
 
@@ -19,6 +18,8 @@ export class Login {
   /* Login */
   fazerLogin() {
     if (this.usuario === 'admin' && this.senha === '123456') {
+      // Salva a permissão para o AuthGuard liberar a entrada
+      localStorage.setItem('usuarioLogado', 'true'); 
       this.router.navigate(['/home']); /* Se acertar vai pra Home */
     } else {
       alert('Usuário ou senha inválidos. Tente novamente.'); /* Se errar, mostra o alerta*/

@@ -7,18 +7,18 @@ import { Observable } from 'rxjs';
 })
 export class VeiculoService {
   
-  // As duas rotas diferentes da API do professor
+  // Rotas da API do professor
   private urlListaModelos = 'http://localhost:3001/vehicles'; 
   private urlDadosVin = 'http://localhost:3001/vehicleData'; 
 
   constructor(private http: HttpClient) { }
 
-  // 1. REQUISIÇÃO GET (Para alimentar os cartões superiores e o menu Select)
+  // REQUISIÇÃO GET
   buscarModelos(): Observable<any> {
     return this.http.get<any>(this.urlListaModelos);
   }
 
-  // 2. REQUISIÇÃO POST (Para alimentar a tabela com o código VIN)
+  // REQUISIÇÃO POST (Para a tabela buscar os dados do VIN)
   buscarPorVin(vin: string): Observable<any> {
     return this.http.post<any>(this.urlDadosVin, { vin: vin });
   }
